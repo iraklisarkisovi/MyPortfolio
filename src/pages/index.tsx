@@ -3,7 +3,7 @@ import { Geist, Geist_Mono, Fredoka } from "next/font/google";
 import Link from "next/link";
 import Header from "./components/Header";
 import Welcome from "./components/Welcome";
- 
+import ThreeScene from "./api/TreeScene"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,9 +25,10 @@ export default function Home() {
   return (
     <>
       <div className="max-md:mb-14">
-        <Header/>
+        <Header />
       </div>
-      <Welcome/>
+      <ThreeScene />
+      <Welcome />
     </>
   );
 }
