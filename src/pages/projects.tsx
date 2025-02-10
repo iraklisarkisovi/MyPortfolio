@@ -24,7 +24,7 @@ const projects: React.FC = () => {
           if (ref.current) {
             gsap.fromTo(
               ref.current,
-              { opacity: 50, x: 50 },
+              { opacity: 50, x: 50},
               {
                 opacity: 1,
                 x: 0,

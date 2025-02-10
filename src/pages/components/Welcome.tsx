@@ -76,7 +76,7 @@ const Welcome: React.FC = () => {
 
         <div
           id="UImage"
-          className="h-auto z-20 text-white flex max-lg:flex-col lg:flex-row items-center justify-between w-11/12 md:w-3/4 p-10  backdrop-blur-sm rounded-xl space-y-8 md:space-y-0"
+          className="h-auto z-20  text-white flex max-lg:flex-col lg:flex-row items-center justify-between w-11/12 md:w-3/4 p-10  backdrop-blur-sm rounded-xl space-y-8 md:space-y-0"
         >
           <div className="flex flex-col items-center md:items-start space-y-4">
             <h1

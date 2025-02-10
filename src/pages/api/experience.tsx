@@ -87,7 +87,7 @@ const Experience = () => {
            {
              opacity: 1,
              y: 0,
-             duration: 1.5,
+             duration: 0.5,
              ease: "power3.out",
              scrollTrigger: {
                trigger: headerRef.current,
@@ -109,7 +109,7 @@ const Experience = () => {
              {
                opacity: 1,
                y: 0,
-               duration: 5,
+               duration: 8,
                ease: "power3.out",
                stagger: 0.2,
                scrollTrigger: {
