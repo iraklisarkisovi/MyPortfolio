@@ -82,17 +82,19 @@ const Projects: React.FC = () => {
       <div>
         <Header />
       </div>
-        <div
-          className={`transition-colors ${
-              selector ? "bg-black text-white" : "bg-white text-black"
-            } w-full max-lg:h-full h-screen max-sm:h-full bg-cover bg-center flex items-center justify-center gap-5 p-4 max-lg:pt-20`}
-            style={{ fontFamily: fredoka.style.fontFamily }}
-        >
+      <div
+        className={`transition-colors ${
+          selector ? "bg-black text-white" : "bg-white text-black"
+        } w-full max-lg:h-full h-screen max-sm:h-full bg-cover bg-center flex items-center justify-center gap-5 p-4 max-lg:pt-20`}
+        style={{ fontFamily: fredoka.style.fontFamily }}
+      >
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {projectsArr.map((it, index) => (
             <div
               key={index}
-              ref={(el) => (divRefs.current[index] = el)}
+              ref={(el) => {
+                divRefs.current[index] = el;
+              }}
               className={`flex flex-col gap-2 min-h-[600px] transition-colors ${
                 selector ? "bg-gray-700 text-white" : "bg-slate-300 text-black"
               } rounded-lg shadow-lg p-6`}
@@ -105,7 +107,9 @@ const Projects: React.FC = () => {
                   <p
                     key={idx}
                     className={`text-sm leading-relaxed p-1 text-center ${
-                      selector ? "bg-gray-500 text-white" : "bg-slate-700 text-white"
+                      selector
+                        ? "bg-gray-500 text-white"
+                        : "bg-slate-700 text-white"
                     } rounded-lg`}
                   >
                     {tool}
