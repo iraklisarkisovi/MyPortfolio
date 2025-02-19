@@ -1,10 +1,18 @@
 import React, { useEffect, useRef } from "react";
 import Header from "./components/Header";
-import { MoviqueTools } from "./components/Tools";
 import { fredoka } from ".";
 import { useSelector } from "react-redux";
 import { RootState } from "./api/MainStore";
 import gsap from "gsap";
+
+const MoviqueTools = [
+  "Next.js",
+  "TypeScript",
+  "Redux",
+  "Tailwind",
+  "React Query",
+  "Axios",
+];
 
 const projectsArr = [
   {
