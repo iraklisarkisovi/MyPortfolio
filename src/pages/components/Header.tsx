@@ -61,7 +61,7 @@ const Header: React.FC = () => {
                 href="/connect"
                 className="hover:text-blue-600 transition duration-200"
               >
-                Connect me
+                Connection
               </Link>
             </li>
           </ul>

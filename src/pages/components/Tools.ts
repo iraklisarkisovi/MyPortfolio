@@ -2,7 +2,7 @@ export const MoviqueTools = [
   "Next.js",
   "TypeScript",
   "Redux",
-  "Material-UI",
+  "Tailwind",
   "React Query",
   "Axios",
 ];
