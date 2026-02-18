@@ -1,9 +1,10 @@
 import React, { useEffect, useRef } from "react";
-import Header from "./components/Header";
-import { fredoka } from ".";
-import { useSelector } from "react-redux";
-import { RootState } from "./api/MainStore";
+ 
 import gsap from "gsap";
+import { useSelector } from "react-redux";
+import { RootState } from "../api/MainStore";
+import Header from "./Header";
+import { fredoka } from "..";
 
 const MoviqueTools = [
   "Next.js",
@@ -87,9 +88,6 @@ const Projects: React.FC = () => {
 
   return (
     <>
-      <div>
-        <Header />
-      </div>
       <div
         className={`transition-colors ${
           selector ? "bg-black text-white" : "bg-white text-black"

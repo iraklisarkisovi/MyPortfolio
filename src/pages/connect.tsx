@@ -4,10 +4,12 @@ import { fredoka } from '.';
 import { useSelector } from 'react-redux';
 import { RootState } from './api/MainStore';
 import gsap from 'gsap';
+import { useRouter } from 'next/router';
 
 const connect = () => {
   const selector = useSelector((state: RootState) => state.MStore.theme)
   const divref = useRef<HTMLDivElement>(null);
+  const router = useRouter()
 
   useEffect(() => {
     (async () => {
@@ -34,8 +36,6 @@ const connect = () => {
             }
           );
         }
-
- 
       }
     })();
   }, []);
@@ -44,10 +44,10 @@ const connect = () => {
     <div
       className={`w-screen h-screen ${
         selector ? "bg-black text-white" : "bg-white text-black"
-      } grid place-items-center bg-cover bg-center  `}
+      } grid place-items-center bg-cover bg-center`}
       style={{ fontFamily: fredoka.style.fontFamily }}
     >
-      <Header />
+      <Header HandleAction={() => router.push("/")} />
       <div
         className="flex flex-col items-center justify-center gap-3 p-4 bg-gradient-radial from-white to-zinc-900"
         ref={divref}

@@ -7,6 +7,8 @@ import { fredoka } from "..";
 import { useQuery } from "@tanstack/react-query";
 import { fetchImages } from "../api/QueryFetch";
 import { CircularProgress } from "@mui/material";
+import Header from "./Header";
+import Projects from "./projects";
 
 const roboto = Roboto({
   weight: ["400", "700"],
@@ -19,7 +21,12 @@ const Welcome: React.FC = () => {
     queryKey: ["image"],
   });
 
+  const sectionRef = useRef<HTMLDivElement>(null);
   const UImages = useRef<HTMLDivElement[]>([]);
+  
+  const HandleScroll = () => {
+    sectionRef.current?.scrollIntoView({ behavior: "smooth" });
+  }
 
   useEffect(() => {
     UImages.current.forEach((el, index) => {
@@ -54,6 +61,9 @@ const Welcome: React.FC = () => {
 
   return (
     <>
+      <div className="max-md:mb-14">
+        <Header HandleAction={HandleScroll} />
+      </div>
       <div
         className="relative grid place-items-center h-screen bg-cover bg-center"
         style={{
@@ -68,9 +78,8 @@ const Welcome: React.FC = () => {
             })`,
             backgroundSize: "cover",
             backgroundPosition: "center",
-            
-            zIndex:1,
 
+            zIndex: 1,
           }}
         ></div>
 
@@ -78,16 +87,16 @@ const Welcome: React.FC = () => {
           id="UImage"
           className="h-auto z-20  text-white flex max-lg:flex-col lg:flex-row items-center justify-between w-11/12 md:w-3/4 p-10  backdrop-blur-sm rounded-xl space-y-8 md:space-y-0"
         >
-          <div className="flex flex-col items-center md:items-start space-y-4">
+          <div className="flex flex-col items-start md:items-start space-y-4">
             <h1
               className={`text-5xl font-bold text-gray-200 ${roboto.className}`}
             >
               Hello! there...
             </h1>
-            <div className="flex md:flex-col text-left items-center justify-around">
+            <div className="flex md:flex-col text-left items-start justify-around">
               <h1 className="text-3xl font-thin text-gray-400">I'm Irakli</h1>
               <p className="text-2xl p-2 ml-5 text-gray-300 max-md:text-center max-md:text-sm">
-                The Frontend Developer <br /> from Georgia
+                a Frontend Developer <br /> from Georgia
               </p>
             </div>
           </div>
@@ -109,6 +118,9 @@ const Welcome: React.FC = () => {
       </div>
       <div className="z-20">
         <Experience />
+        <div ref={sectionRef}>
+          <Projects />
+        </div>
       </div>
     </>
   );

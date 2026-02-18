@@ -6,7 +6,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { themeSwitcher } from "../api/MainSlice";
 import { RootState } from "../api/MainStore";
 
-const Header: React.FC = () => {
+type Props = {
+  HandleAction: () => void;
+};
+
+const Header: React.FC<Props> = ({HandleAction}) => {
   const dispatch = useDispatch();
   const [bool, setBool] = useState(false);
   const selector = useSelector((state: RootState) => state.MStore.theme);
@@ -48,13 +52,11 @@ const Header: React.FC = () => {
                 Home
               </Link>
             </li>
-            <li>
-              <Link
-                href="/projects"
-                className="hover:text-blue-600 transition duration-200"
-              >
-                Projects
-              </Link>
+            <li
+              onClick={HandleAction}
+              className="cursor-pointer hover:text-blue-600 transition duration-200"
+            >
+              Projects
             </li>
             <li>
               <Link
